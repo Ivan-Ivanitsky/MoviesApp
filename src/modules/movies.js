@@ -100,6 +100,13 @@ const movies = {
         if (!searchMovies.Search) {
           throw Error(searchMovies.Error);
         }
+
+        searchMovies.Search.map((item) => {
+          if (item.Poster == "N/A") {
+            return (item.Poster = require("../assets/img/notFound.jpg"));
+          }
+        });
+
         const movies = serializeMovies(searchMovies.Search);
         context.commit(SEARCH, movies);
         context.commit(MOVIES, movies);
