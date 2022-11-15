@@ -59,7 +59,7 @@ export default {
 .errorMessage {
   color: rgb(255 255 255);
   display: flex;
-  font-size: 50px;
+  font-size: 45px;
   position: fixed;
   left: 0;
   right: 0;
