@@ -23,9 +23,10 @@
             size="sm"
             class="my-2 my-sm-0"
             type="submit"
-            @click="search(input)"
-            >Search</b-button
+            @click.prevent="search(input)"
           >
+            <b-icon icon="search"></b-icon>
+          </b-button>
         </b-nav-form>
       </B-container>
     </b-navbar>
@@ -43,6 +44,7 @@ export default {
   },
   methods: {
     search(value) {
+      console.log(value);
       this.$emit("onSearch", value);
     },
   },
@@ -181,11 +183,12 @@ nav {
   }
 }
 @media (max-width: 576px) {
-  .form-inline {
-    justify-content: space-evenly;
-  }
 }
 @media (max-width: 525px) {
+  .search-input {
+    width: 55%;
+    margin: 3px;
+  }
   .navbar-brand {
     margin: 0;
   }
