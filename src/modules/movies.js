@@ -37,6 +37,7 @@ const movies = {
   mutations: {
     [MOVIES](state, paylode) {
       state.movies = paylode;
+      console.log(state);
       state.paginationItem = true;
       state.error = null;
     },
